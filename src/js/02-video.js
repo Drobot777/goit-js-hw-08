@@ -9,10 +9,10 @@ const keyStorage = "videoplayer-current-time"
     player.on('timeupdate', throttle(function(data) {
         localStorage.setItem(keyStorage, JSON.stringify(data.seconds))
     }), 1000);
-    seconds = JSON.parse(localStorage.getItem(keyStorage))
+   
 
    player.setCurrentTime(seconds).then(function(seconds) {
-       
+       seconds = JSON.parse(localStorage.getItem(keyStorage)) 
      
 }).catch(function(error) {
     switch (error.name) {
