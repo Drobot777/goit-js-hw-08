@@ -11,8 +11,8 @@ const keyStorage = "videoplayer-current-time"
     }), 1000);
    
 
-   player.setCurrentTime(seconds).then(function(seconds) {
-       seconds = JSON.parse(localStorage.getItem(keyStorage)) 
+   player.setCurrentTime(JSON.parse(localStorage.getItem(keyStorage)) ).then(function(seconds) {
+        
      
 }).catch(function(error) {
     switch (error.name) {
